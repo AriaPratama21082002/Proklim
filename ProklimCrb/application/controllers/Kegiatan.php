@@ -22,9 +22,10 @@ class Kegiatan extends CI_Controller {
     $data['title'] = "Kategori";
     $data['konten'] = "Kategori";
     $data['isi'] = 'kategori/dtkategori';
-      $data['datap'] = $this->Model_akun->get_by_id($kondisi);
+    $data['datap'] = $this->Model_akun->get_by_id($kondisi);
     $data['data'] =$this->Model_kegiatan->list_kegiatan();
-    $this->load->view('Kegiatan/dtkegiatan', $data);
+
+    return $this->load->view('Kegiatan/dtkegiatan', $data);
   }
   public function edit($id)
     {
@@ -60,7 +61,7 @@ $data['datadokumen'] =$this->Model_dokumenpendukung->list_dokumenpendukung();
     $data['konten'] = "Kegiatan";
     $data['isi'] = 'Kegiatan/dtqurban';
     $data['datap'] = $this->Model_akun->get_by_id($kondisip);
-      return $this->load->view('Kegiatan/tambahdata',$data);
+      return $this->load->view('Kegiatan/tambah',$data);
     }
     public function insertdata()
     {
@@ -93,14 +94,15 @@ $data['datadokumen'] =$this->Model_dokumenpendukung->list_dokumenpendukung();
       $tiga_penggunaan_lahan2   = $this->input->post('tiga_penggunaan_lahan2');
       $persentase2   = $this->input->post('persentase2');
       $tiga_sumber_penghasilan_utama   = $this->input->post('tiga_sumber_penghasilan_utama');
+      $persentase5 = $this->input->post('persentase5');
       $komponen   = $this->input->post('komponen');
       $satuan   = $this->input->post('satuan');
       $jumlah   = $this->input->post('jumlah');
-      $komponen_kel   = $this->input->post('komponen_kel');
-      $kegiatan_jenis   = $this->input->post('kegiatan_jenis');
-      $uraian   = $this->input->post('uraian');
-      $data   = $this->input->post('data');
-      $keterangan   = $this->input->post('keterangan');
+      // $komponen_kel   = $this->input->post('komponen_kel');
+      // $kegiatan_jenis   = $this->input->post('kegiatan_jenis');
+      // $uraian   = $this->input->post('uraian');
+      // $data   = $this->input->post('data');
+      // $keterangan   = $this->input->post('keterangan');
       
               $data = array(
                             'judul_kegiatan'       => $judul_kegiatan,
@@ -134,16 +136,17 @@ $data['datadokumen'] =$this->Model_dokumenpendukung->list_dokumenpendukung();
                             'persentase1'       => $persentase1,
                             'tiga_penggunaan_lahan2'       => $tiga_penggunaan_lahan2,
                             'persentase2'       => $persentase2,
-                            'tiga_sumber_penghasilan_utama'       => $tiga_sumber_penghasilan_utama,
+                            'tiga_sumber_penghasilan_utama'=> $tiga_sumber_penghasilan_utama,
+                            'persentase5' => $persentase5,
                             'komponen'       => $komponen,
 
                             'satuan'       => $satuan,
                             'jumlah'       => $jumlah,
-                            'komponen_kel'       => $komponen_kel,
-                            'kegiatan_jenis'       => $persentase2,
-                            'uraian'       => $uraian,
-                            'data'       => $data,
-                            'keterangan' => $keterangan,
+      //                       'komponen_kel'       => $komponen_kel,
+      //                       'kegiatan_jenis'       => $persentase2,
+      //                       'uraian'       => $uraian,
+      //                       'data'       => $data,
+      //                       'keterangan' => $keterangan,
 
 
 
